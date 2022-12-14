@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "typescript": "4.8.2"
   },
   "scripts": {
