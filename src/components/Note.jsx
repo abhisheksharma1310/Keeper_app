@@ -1,18 +1,28 @@
 import React from "react";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
-function Note(props) {
-  function handleClick() {
-    props.onDelete(props.id);
-  }
+const Note = ({ title, content, id, onDelete, onEdit }) => {
+  const handleDelete = () => {
+    onDelete(id);
+  };
+
+  const handleEdit = () => {
+    onEdit(id);
+  };
 
   return (
     <div className="note">
-      <h1>{props.title}</h1>
-      <p>{props.content}</p>
-      <button onClick={handleClick}><DeleteIcon /></button>
+      <h1>{title}</h1>
+      <p>{content}</p>
+      <button onClick={handleDelete}>
+        <DeleteIcon />
+      </button>
+      <button onClick={handleEdit}>
+        <EditIcon />
+      </button>
     </div>
   );
-}
+};
 
 export default Note;
